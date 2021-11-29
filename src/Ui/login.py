@@ -7,8 +7,10 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+# from Ui.login import MainWindow
 
 
+widget = QtWidgets.QStackedWidget()
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -60,7 +62,8 @@ class Ui_MainWindow(object):
         self.lineEdit_2.setText(_translate("MainWindow", "Password"))
         self.pushButton.setText(_translate("MainWindow", "Login"))
         self.label.setText(_translate("MainWindow", "Register"))
-
+    def goToLogin(self) :
+        widget.setCurrentIndex(widget.currentIndex()+1)
 
 if __name__ == "__main__":
     import sys
