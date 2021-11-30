@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>595</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>-1</y>
+      <width>801</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget#widget {
+background-color:qlineargradient(spread:pad, x1:0.189055, y1:0.545, x2:0.139, y2:0.544682, stop:0.402985 rgba(255, 255, 254, 255), stop:0.507463 rgba(217, 81, 35, 255)); }
+</string>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>200</y>
+       <width>401</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 17pt &quot;MS Sans Serif&quot;;
+color: rgb(217, 81, 35);
+</string>
+     </property>
+     <property name="text">
+      <string>Selamat Datang di Dragonier</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>91</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>img/naga.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuHome">
+    <property name="title">
+     <string>Home</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuBahan_Dasar">
+    <property name="title">
+     <string>Bahan Dasar</string>
+    </property>
+    <addaction name="actionInput"/>
+    <addaction name="actionVisualisasi"/>
+   </widget>
+   <widget class="QMenu" name="menuKeuangan">
+    <property name="title">
+     <string>Finansial</string>
+    </property>
+    <widget class="QMenu" name="menuPengolahan_Data">
+     <property name="title">
+      <string>Pengolahan Data</string>
+     </property>
+     <addaction name="actionData_Laba_Rugi"/>
+     <addaction name="actionData_Keuangan"/>
+    </widget>
+    <addaction name="actionInput_Data_Bahan_Dasar"/>
+    <addaction name="actionInput_Data_Pengeluaran"/>
+    <addaction name="actionInput_Data_Beban"/>
+    <addaction name="menuPengolahan_Data"/>
+   </widget>
+   <addaction name="menuHome"/>
+   <addaction name="menuBahan_Dasar"/>
+   <addaction name="menuKeuangan"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionInput">
+   <property name="text">
+    <string>Input</string>
+   </property>
+  </action>
+  <action name="actionVisualisasi">
+   <property name="text">
+    <string>Visualisasi</string>
+   </property>
+  </action>
+  <action name="actionInput_Data_Bahan_Dasar">
+   <property name="text">
+    <string>Input Data Pemasukan</string>
+   </property>
+  </action>
+  <action name="actionInput_Data_Pengeluaran">
+   <property name="text">
+    <string>Input Data Pengeluaran</string>
+   </property>
+  </action>
+  <action name="actionInput_Data_Beban">
+   <property name="text">
+    <string>Input Data Beban</string>
+   </property>
+  </action>
+  <action name="actionData_Laba_Rugi">
+   <property name="text">
+    <string>Data Laba-Rugi</string>
+   </property>
+  </action>
+  <action name="actionData_Keuangan">
+   <property name="text">
+    <string>Data Keuangan</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="img/naga.qrc"/>
+ </resources>
+ <connections/>
+</ui>

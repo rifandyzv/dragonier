@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>VisualisasiBahanDasar</class>
+ <widget class="QWidget" name="VisualisasiBahanDasar">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>830</width>
+    <height>563</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>830</width>
+    <height>563</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>90</y>
+     <width>501</width>
+     <height>402</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>501</width>
+     <height>402</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>512</width>
+     <height>512</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(214, 214, 214);</string>
+   </property>
+   <column>
+    <property name="text">
+     <string>ID Bahan</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Nama Bahan</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Kuantitas</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>20</y>
+     <width>231</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 20pt &quot;MS Serif&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Data Bahan Dasar</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

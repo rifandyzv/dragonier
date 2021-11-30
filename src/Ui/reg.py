@@ -7,10 +7,9 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from login import Ui_Login
-import sys
 
-class Ui_Register(QtWidgets.QDialog):
+
+class Ui_Register(object):
     def setupUi(self, Register):
         Register.setObjectName("Register")
         Register.resize(720, 504)
@@ -22,7 +21,6 @@ class Ui_Register(QtWidgets.QDialog):
         self.pushButton = QtWidgets.QPushButton(Register)
         self.pushButton.setGeometry(QtCore.QRect(20, 30, 21, 24))
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.clicked.connect(self.backToLogin)
         self.verticalLayoutWidget = QtWidgets.QWidget(Register)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(300, 50, 171, 390))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
@@ -86,11 +84,6 @@ class Ui_Register(QtWidgets.QDialog):
         self.retranslateUi(Register)
         QtCore.QMetaObject.connectSlotsByName(Register)
 
-    def backToLogin(self) :
-        login = Ui_Login()
-        widget.addWidget(login)
-        widget.setCurrentIndex(widget.currentIndex()+1)
-
     def retranslateUi(self, Register):
         _translate = QtCore.QCoreApplication.translate
         Register.setWindowTitle(_translate("Register", "Form"))
@@ -103,35 +96,3 @@ class Ui_Register(QtWidgets.QDialog):
         self.label_9.setText(_translate("Register", "Cabang"))
         self.label_10.setText(_translate("Register", "Jabatan"))
         self.label_11.setText(_translate("Register", "Role"))
-
-
-app = QtWidgets.QApplication(sys.argv)
-widget = QtWidgets.QStackedWidget()
-register = Ui_Register()
-login = Ui_Login()
-
-widget.addWidget(login)
-widget.addWidget(register)
-widget.setCurrentIndex(1)
-widget.show()
-
-# if __name__ == "__main__":
-    # app = QtWidgets.QApplication(sys.argv)
-    # widget = QtWidgets.QStackedWidget()
-
-    # login = Ui_Login()
-    # register = Ui_Register()
-
-    # widget.addWidget(register)
-    # widget.add(login)
-    # widget.show()
-    # sys.exit(app.exec())
-    # widget = QtWidgets.QStackedWidget()
-    # Login = Ui_Login()
-    # Register = QtWidgets.QWidget()
-
-    # widget.addWidget(re)
-    # ui = Ui_Register()
-    # ui.setupUi(Register)
-    # Register.show()
-    # sys.exit(app.exec())
