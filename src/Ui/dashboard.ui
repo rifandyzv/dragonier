@@ -62,7 +62,7 @@ color: rgb(217, 81, 35);
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>img/naga.png</pixmap>
+      <pixmap>../../img/naga.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
