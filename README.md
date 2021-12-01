@@ -37,13 +37,13 @@ uvicorn main:app --reload
 
 ## Screenshot Aplikasi
 
-![](doc\login-page.jpg)
-![](doc\register-page.jpg)
-![](doc\dashboard.jpg)
-![](doc\input-bahan-dasar-page.jpg)
-![](doc\input-data-beban-page.jpg)
-![](doc\input-data-pemasukan-page.jpg)
-![](doc\input-data-pengeluaran.jpg)
-![](doc\pengolahan-data-keuangan-page.jpg)
-![](doc\pengolahan-data-laba-rugi-page.jpg)
-![](doc\visualisasi-data-bahan-dasar-page.jpg)
+![](/doc/login-page.jpg)
+![](/doc/register-page.jpg)
+![](/doc/dashboard.jpg)
+![](/doc/input-bahan-dasar-page.jpg)
+![](/doc/input-data-beban-page.jpg)
+![](/doc/input-data-pemasukan-page.jpg)
+![](/doc/input-data-pengeluaran.jpg)
+![](/doc/pengolahan-data-keuangan-page.jpg)
+![](/doc/pengolahan-data-laba-rugi-page.jpg)
+![](/doc/visualisasi-data-bahan-dasar-page.jpg)
