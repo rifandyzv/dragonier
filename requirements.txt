@@ -10,6 +10,7 @@ packaging==21.3
 pluggy==1.0.0
 py==1.11.0
 pyparsing==3.0.6
+pylint==2.4.4
 PyQt6==6.2.1
 PyQt6-Qt6==6.2.1
 PyQt6-sip==13.1.0
