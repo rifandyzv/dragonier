@@ -1,14 +1,19 @@
-image: "python:3.7" 
-
-before_script:
-  - python --version
-  - pip install -r requirements.txt
-
 stages:
-  - Static Analysis
+    - build
+    - test
 
+build-job:
+    stage: build
+    script:
+        - echo "Building"
+        - mkdir build
+        - touch build/info.txt
+    artifacts:
+        paths:
+            - build/
 
-pylint:
-  stage: Static Analysis
-  script:
-  - pylint -d C0301 src/*.py
+unit-test-job:
+    stage: test
+    script:
+        - echo "Testing"
+        - test -f "build/info.txt"
