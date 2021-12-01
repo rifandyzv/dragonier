@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>595</height>
+    <width>764</width>
+    <height>568</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -78,7 +78,7 @@ color: rgb(217, 81, 35);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>764</width>
      <height>22</height>
     </rect>
    </property>
@@ -106,7 +106,7 @@ color: rgb(217, 81, 35);
      <addaction name="actionData_Laba_Rugi"/>
      <addaction name="actionData_Keuangan"/>
     </widget>
-    <addaction name="actionInput_Data_Bahan_Dasar"/>
+    <addaction name="actionInput_Data_Pemasukan"/>
     <addaction name="actionInput_Data_Pengeluaran"/>
     <addaction name="actionInput_Data_Beban"/>
     <addaction name="menuPengolahan_Data"/>
@@ -126,7 +126,7 @@ color: rgb(217, 81, 35);
     <string>Visualisasi</string>
    </property>
   </action>
-  <action name="actionInput_Data_Bahan_Dasar">
+  <action name="actionInput_Data_Pemasukan">
    <property name="text">
     <string>Input Data Pemasukan</string>
    </property>

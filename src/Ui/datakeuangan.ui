@@ -97,16 +97,6 @@
     <string>Pengeluaran</string>
    </property>
   </widget>
-  <widget class="QListView" name="Periode">
-   <property name="geometry">
-    <rect>
-     <x>340</x>
-     <y>90</y>
-     <width>256</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="Rp3">
    <property name="geometry">
     <rect>
@@ -141,24 +131,6 @@
    </property>
    <property name="text">
     <string>Rp</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="Bulanterakhir">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>100</y>
-     <width>121</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>1 Bulan Terakhir</string>
    </property>
   </widget>
   <widget class="QLabel" name="Rp4">
@@ -276,6 +248,83 @@ main page</string>
    </property>
    <property name="text">
     <string>⬅️</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pemasukan_lbl">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>220</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Comfortaa SemiBold</family>
+     <pointsize>12</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>..</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="beban_lbl">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>370</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>..</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pengeluaran_lbl">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>220</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>..</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="laba_lbl">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>370</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>..</string>
    </property>
   </widget>
  </widget>
