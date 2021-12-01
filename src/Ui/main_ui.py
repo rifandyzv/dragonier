@@ -2,7 +2,6 @@ import sys
 from PyQt6 import QtWidgets
 from PyQt6.QtWidgets import QDialog, QApplication, QMainWindow, QMessageBox, QWidget
 from PyQt6.uic import loadUi
-from dashboard import Ui_MainWindow
 import requests
 class Login(QWidget) :
     def __init__(self):
