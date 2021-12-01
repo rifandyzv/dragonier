@@ -16,16 +16,31 @@ class Login(QWidget) :
         widget.addWidget(register)
         widget.setCurrentWidget(register)
         # widget.setCurrentIndex(widget.currentIndex()+1)
+    # def login(self) :
+    #     print(self.lineEdit.text())
+    #     print(self.lineEdit_2.text())
+    #     if (True) :
+    #         MainWindow = Dashboard()
+    #         # widget.insertWidget(MainWindow)
+    #         widget.addWidget(MainWindow)
+    #         widget.setCurrentWidget(MainWindow)
+    #         # widget.setCurrentIndex(widget.currentIndex()+1)
     def login(self) :
-        print(self.lineEdit.text())
-        print(self.lineEdit_2.text())
-        if (True) :
+        url = 'http://localhost:8000/login'
+        body = {
+            "username": self.lineEdit.text(),
+            "password": self.lineEdit_2.text()
+            }
+        req = requests.post(url, json=body)
+
+        if (req.status_code == 200) :
+            print(self.lineEdit.setText(''))
+            print(self.lineEdit_2.setText(''))
             MainWindow = Dashboard()
-            # widget.insertWidget(MainWindow)
             widget.addWidget(MainWindow)
             widget.setCurrentWidget(MainWindow)
-            # widget.setCurrentIndex(widget.currentIndex()+1)
-        
+        else :
+            QtWidgets.QMessageBox.about(self, 'Connection', "Invalid Credentials !!")
 
 
 class Register(QWidget) :
@@ -44,7 +59,13 @@ class Dashboard(QMainWindow) :
         self.actionVisualisasi.triggered.connect(self.visualisasiScr)
         self.actionInput_Data_Beban.triggered.connect(self.goToBeban)
         self.actionInput.triggered.connect(self.goToEntryBahan)
+        self.actionInput_Data_Pengeluaran.triggered.connect(self.goToPengeluaran)
+        self.actionData_Laba_Rugi.triggered.connect(self.goToLabaRugi)
+        self.actionData_Keuangan.triggered.connect(self.goToKeuangan)
+        self.actionLogout.triggered.connect(self.logout)
 
+    def logout(self) :
+        widget.setCurrentIndex(0)
     def goToEntryBahan(self) :
         bahanDasar = EntryBahanDasar()
         widget.addWidget(bahanDasar)
@@ -59,6 +80,24 @@ class Dashboard(QMainWindow) :
 
         widget.addWidget(visualisasi)
         widget.setCurrentWidget(visualisasi)
+    def goToPengeluaran(self) :
+        pengeluaran = InputDataPengeluaran()
+
+        widget.addWidget(pengeluaran)
+        widget.setCurrentWidget(pengeluaran)
+    def goToLabaRugi(self) :
+        labarugi = LabaRugi()
+
+        widget.addWidget(labarugi)
+        widget.setCurrentWidget(labarugi)
+        
+    def goToKeuangan(self) :
+        keuangan = DataKeuangan()
+
+        widget.addWidget(keuangan)
+        widget.setCurrentWidget(keuangan)
+        
+        
 
 
 class Visualisasi(QWidget) :
@@ -145,18 +184,68 @@ class EntryBahanDasar(QDialog) :
 
         except :
             QtWidgets.QMessageBox.about(self, 'Connection', "Insert data Failed")
-            self.close()
+class DataKeuangan(QWidget) :
+    def __init__(self) :
+        super(DataKeuangan, self).__init__()
+        loadUi("datakeuangan.ui", self)
+        self.backButton.clicked.connect(self.backToMain)
+    def backToMain(self) :
+        main = Dashboard()
+        widget.addWidget(main)
+        widget.setCurrentWidget(main)
+class LabaRugi(QWidget) :
+    def __init__(self) :
+        super(LabaRugi, self).__init__()
+        loadUi("labarugi.ui", self)
+        self.backButton.clicked.connect(self.backToMain)
+    def backToMain(self) :
+        main = Dashboard()
+        widget.addWidget(main)
+        widget.setCurrentWidget(main)
 
-#  Login = QtWidgets.QWidget()
-#     ui = Ui_Login()
-#     ui.setupUi(Login)
-#     Login.show()
+class InputDataPengeluaran(QWidget):
+    def __init__(self) :
+        super(InputDataPengeluaran, self).__init__()
+        loadUi("pengeluaran.ui", self)
+        self.pushButton_3.clicked.connect(self.InsertData)
+        self.backButton.clicked.connect(self.backToMain)
+    def backToMain(self) :
+        main = Dashboard()
+        widget.addWidget(main)
+        widget.setCurrentWidget(main)
+    def InsertData(self):
+
+        url = 'http://localhost:8000/dataKeuangan/supplyBahanDasar'
+
+        body = {
+            "idSupplier": self.lineEdit.text(),
+            "idBahan": self.lineEdit_2.text(),
+            "harga": self.lineEdit_3.text(),
+            "kuantitas": self.lineEdit_4.text(),
+            "satuan": self.lineEdit_5.text()
+        }
+
+        bodyFix = {
+            "idSupplier": int(body["idSupplier"]),
+            "idBahan": int(body["idBahan"]),
+            "harga": int(body["harga"]),
+            "kuantitas": int(body["kuantitas"]),
+            "satuan": body["satuan"],
+        }
+
+        try :
+            print(bodyFix)
+            print(type(bodyFix["idSupplier"]))
+            requests.post(url, json=bodyFix)
+            QtWidgets.QMessageBox.about(self, 'Connection', 'data pengeluaran berhasil ditambahkan')
+            
+            
+        except :
+            QtWidgets.QMessageBox.about(self, 'Connection', 'data pengeluaran gagal ditambahkan')
+
 app = QtWidgets.QApplication(sys.argv)
 widget = QtWidgets.QStackedWidget()
 login = Login()
-# register = Register()
-
-
 
 widget.addWidget(login)
 # widget.addWidget(register)

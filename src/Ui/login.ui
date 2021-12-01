@@ -29,7 +29,7 @@
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>40</y>
+     <y>0</y>
      <width>231</width>
      <height>251</height>
     </rect>
@@ -120,6 +120,25 @@
    </property>
    <property name="text">
     <string>Register</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="logo_2">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>240</y>
+     <width>221</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../img/dragonier.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
