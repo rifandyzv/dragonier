@@ -9,6 +9,7 @@ class Login(QWidget) :
         loadUi("login.ui", self)
         self.pushButton.clicked.connect(self.login)
         self.pushButton_2.clicked.connect(self.goToRegister)
+        self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
     def goToRegister(self) :
         register = Register()
         # widget.insertWidget(register)
@@ -46,6 +47,7 @@ class Register(QWidget) :
     def __init__(self) :
         super(Register, self).__init__()
         loadUi("register_w.ui", self)
+        self.lineEdit_4.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
         self.pushButton.clicked.connect(self.goToLogin)
         self.pushButton_2.clicked.connect(self.registerRequest)
     def registerRequest(self) :
@@ -217,10 +219,24 @@ class DataKeuangan(QWidget) :
         super(DataKeuangan, self).__init__()
         loadUi("datakeuangan.ui", self)
         self.backButton.clicked.connect(self.backToMain)
+        self.dataKeuangan = self.getData()
+        self.pengeluaran_lbl.setText("{:,.2f}".format(self.dataKeuangan["pengeluaran"]))
+        self.pemasukan_lbl.setText("{:,.2f}".format(self.dataKeuangan["pemasukan"]))
+        self.beban_lbl.setText("{:,.2f}".format(self.dataKeuangan["beban"]))
+        self.laba = self.dataKeuangan["pemasukan"] - (self.dataKeuangan["beban"] + self.dataKeuangan["pengeluaran"])
+        if self.laba < 0 :
+
+            self.laba_lbl.setStyleSheet("color: red;")
+            
+        self.laba_lbl.setText("{:,.2f}".format(self.laba))
     def backToMain(self) :
         main = Dashboard()
         widget.addWidget(main)
         widget.setCurrentWidget(main)
+    def getData(self) :
+        res = requests.get("http://127.0.0.1:8000/dataKeuangan").json()
+        return res
+        
 class LabaRugi(QWidget) :
     def __init__(self) :
         super(LabaRugi, self).__init__()

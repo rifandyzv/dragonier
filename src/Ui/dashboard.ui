@@ -103,7 +103,6 @@ color: rgb(217, 81, 35);
      <property name="title">
       <string>Pengolahan Data</string>
      </property>
-     <addaction name="actionData_Laba_Rugi"/>
      <addaction name="actionData_Keuangan"/>
     </widget>
     <addaction name="actionInput_Data_Pemasukan"/>
